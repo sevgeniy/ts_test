@@ -12,6 +12,6 @@ class Person {
   }
 }
 
-let person = new Person("Joe", 26);
+let person = new Person("Max", 26);
 
 console.log(person.toString());
