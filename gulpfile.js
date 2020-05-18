@@ -1,16 +1,19 @@
 const gulp = require("gulp");
 const server = require("browser-sync").create();
-var ts = require("gulp-typescript");
+const ts = require("gulp-typescript");
+const sourcemaps = require("gulp-sourcemaps");
 
 gulp.task("scripts", function () {
   return gulp
     .src("src/ts/*.ts")
+    .pipe(sourcemaps.init())
     .pipe(
       ts({
         noImplicitAny: true,
         outFile: "index.js",
       })
     )
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest("src/js"));
 });
 
