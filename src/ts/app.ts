@@ -1,17 +1,13 @@
-class Person {
-  name: string;
-  age: number;
+let person: { name: string } = { name: "Joe" };
 
-  constructor(name: string, age: number) {
-    this.name = name;
-    this.age = age;
-  }
+console.log(typeof person);
 
-  toString(): string {
-    return `${this.name} is ${this.age} years old.`;
+class SomeClass<T extends { name: string }> {
+  foo(p: T): string {
+    return p.name;
   }
 }
 
-let person = new Person("Max", 26);
+let s = new SomeClass();
 
-console.log(person.toString());
+console.log(s.foo(person));
