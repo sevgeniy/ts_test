@@ -13,6 +13,13 @@ pipeline {
       }
     }
 
+    stage('Build') {
+      steps {
+        tool 'gradle7'
+        sh 'gradle build'
+      }
+    }
+
   }
   environment {
     COMPLETED_MSG = 'Build done!'
