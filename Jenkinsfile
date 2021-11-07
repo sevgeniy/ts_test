@@ -9,7 +9,7 @@ pipeline {
     stage('Source') {
       agent any
       steps {
-        git 'https://github.com/sevgeniy/ts_test'
+        git 'https://github.com/sevgeniy/blue-ocean-demo.git'
       }
     }
 
